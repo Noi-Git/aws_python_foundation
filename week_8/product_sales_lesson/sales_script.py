@@ -1,9 +1,11 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # Add root folder to the path
-from product_sales import *
 from clear_terminal import clear_terminal
 clear_terminal()
+
+# from product_sales import Product
+# from test_main import test_classes
 
 class Sales:
   def __init__(self):
@@ -12,6 +14,7 @@ class Sales:
   def add_sale(self, product, quantity):
     sale = {'product': product, 'quantity': quantity}
     self.sales_data.append(sale)
+    print('self.sales_data:', self.sales_data)
 
   def generate_report(self):
     total_sale = 0
@@ -28,12 +31,23 @@ class Sales:
       quants = [sale['quantity'] for sale in self.sales_data if sale['product'] == product]
       quantity_sold = sum(quants)
       revenue = round(product.price * quantity_sold, 2)
-      repoet += f'{product}: {quantity_sold} sold for a total revenue fo ${revenue}\n'
+      report += f'{product}: {quantity_sold} sold for a total revenue fo ${revenue}\n'
     report += f'Total Sales: ${total_sale}\n'
     return report
 
+# test_classes()
 
+# prod1 = Product("WidgetA", 10.99, 100)
+# prod2 = Product("WidgetB", 19.99, 50)
+# prod3 = Product("WidgetC", 7.99, 150)
+# prod4 = Product("WidgetD", 3.99, 500)
 
+# sales = Sales()
+# sales.add_sale(prod1, 15)
+# sales.add_sale(prod2, 30)
+# sales.add_sale(prod3, 45)
+# sales.add_sale(prod1, 30)
+# sales.add_sale(prod4, 100)
 
 
 #======= Test data ========
@@ -58,5 +72,6 @@ class Sales:
 # ======= To see the value inside of the sales_report =======
 # print('\n======= Need to call each item in the list in order o see the value inside of the sales_report =======')
 # sale.generate_report()
+
 
 

@@ -5,7 +5,7 @@ from clear_terminal import clear_terminal
 
 clear_terminal()
 
-from product_sales import *
+from product_sales import Product
 from sales_script import *
 def test_classes():
     prod1 = Product("WidgetA", 10.99, 100)
@@ -20,5 +20,12 @@ def test_classes():
     sales.add_sale(prod1, 30)
     sales.add_sale(prod4, 100)
     
+    sales.generate_report()  # No need to `print()` it, since the method itself prints
     print('Sales:', sales)
-    print (sales.generate_report())
+    print('prod1:', prod1)
+    # print (sales.generate_report())
+    # print(f'Sale data: {sales.sales_data}') 
+
+# ✅ Optionally run the test only when the script is executed directly:
+if __name__ == "__main__":
+    test_classes()
