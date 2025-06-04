@@ -20,5 +20,7 @@ def test_classes():
     sales.add_sale(prod1, 30)
     sales.add_sale(prod4, 100)
     
-    print('Sales:', sales)
     print (sales.generate_report())
+
+    if __name__ == "__main__":
+        test_classes()
