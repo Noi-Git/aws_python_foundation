@@ -15,6 +15,6 @@ class Product:
     return f'Product name: {self.name}, Price: ${self.price}, Amount in stock: {self.inventory}'
 
 # #======= Test data ========
-# prod1 = Product("WidgetA", 1.26, 50)
+# prod1= Product("WidgetA", 1.26, 50)
 # print(f'{prod1.name}: {prod1.price}: {prod1.inventory}')
 # print(f'Prod1: {prod1}') #This will call the __str__
