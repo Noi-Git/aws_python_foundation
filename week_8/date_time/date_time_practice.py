@@ -1,6 +1,6 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # Add root folder to the path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from clear_terminal import clear_terminal
 from datetime import datetime, timedelta
 
