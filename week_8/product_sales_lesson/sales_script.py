@@ -4,9 +4,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) 
 from clear_terminal import clear_terminal
 clear_terminal()
 
-# from product_sales import Product
-# from test_main import test_classes
-
 class Sales:
   def __init__(self):
     self.sales_data = []
@@ -14,28 +11,43 @@ class Sales:
   def add_sale(self, product, quantity):
     sale = {'product': product, 'quantity': quantity}
     self.sales_data.append(sale)
-    print('self.sales_data:', self.sales_data)
+    # print('self.sales_data:', self.sales_data)
 
   def generate_report(self):
     total_sale = 0
     print('This is sales data: ', self.sales_data) #This will show data in each sale, such as sale001
 
     for sale in self.sales_data:
-      print('each sale:', sale)
+      # print('each sale:', sale)
+      print('---sale[product]:', sale['product']) #This will print data in the Product __str__
       total_sale += sale['product'].price * sale['quantity']
+      # print('Total sales:', total_sale)
 
     report = ''
     product_set = set([sale['product'] for sale in self.sales_data])
 
     for product in product_set:
       quants = [sale['quantity'] for sale in self.sales_data if sale['product'] == product]
+      print('+++', sale['product'])
+      print('***', product)
       quantity_sold = sum(quants)
       revenue = round(product.price * quantity_sold, 2)
-      report += f'{product}: {quantity_sold} sold for a total revenue fo ${revenue}\n'
+      report += f'{product}: {quantity_sold} sold for a total revenue of ${revenue}\n'
     report += f'Total Sales: ${total_sale}\n'
     return report
 
-# test_classes()
+
+# ------- Note --------
+'''
+quants = [sale['quantity'] for sale in self.sales_data if sale['product'] == product]
+
+Can be written as:
+
+quants = []
+for sale in self.sales_data:
+    if sale['product'] == product:
+        quants.append(sale['quantity'])
+'''
 
 # prod1 = Product("WidgetA", 10.99, 100)
 # prod2 = Product("WidgetB", 19.99, 50)
