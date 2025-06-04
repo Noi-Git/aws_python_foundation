@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # Add root folder to the path
 from clear_terminal import clear_terminal
 from datetime import datetime
 # import datetime
@@ -87,9 +90,9 @@ clear_terminal()
 
 
 # *************************************
-# print('==== Use the strftime() method %B shortcut to extract the full name of the month ====')
-# new_date = datetime(2020, 7, 31)
-# print (new_date.strftime("%B"))
+print('==== Use the strftime() method %B shortcut to extract the full name of the month ====')
+new_date = datetime(2020, 7, 31)
+print (new_date.strftime("%B"))
 
 
 
